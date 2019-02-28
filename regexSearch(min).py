@@ -24,7 +24,7 @@ def regex_search(regex, directory):
                 res[pth] = tmp
     return res
 
-def main():
+if __name__ == "__main__":
     directory, pattern = sys.argv[1:3]
     while not path.isdir(directory):
         print("Error: Please input a valid path for an existing directory:", end = "\t")
@@ -41,5 +41,3 @@ def main():
             pattern = input()
     matches = regex_search(regex, directory)
     for key in matches:  print(key, "\n".join(matches[key]), sep="\n", end="\n\n")
-
-main()
